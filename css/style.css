@@ -14,7 +14,9 @@
 	font-size: inherit;
 }
 
-/* I would like to reduce the white space between the h3 tag Recommending Recreation and the nav bar.*/
+.inputArea{
+  background-color: rgb(242, 251, 255);
+}
 
 .submitButton{
   margin-top: 40px;
@@ -22,4 +24,18 @@
 
 .state{
   margin: 15px 0px;
+}
+
+.weatherContainer, .activitiesContainer{
+  background-color: rgb(242, 251, 255);
+  margin: 5px 40px;
+  padding: 30px;
+}
+
+
+.icon-block{
+  background-color: white;
+  padding: 20px;
+  overflow:scroll;
+  height: 350px;
 }
