@@ -9,6 +9,17 @@
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
 	font-size: inherit;
+}
+
+/* I would like to reduce the white space between the h3 tag Recommending Recreation and the nav bar.*/
+
+.submitButton{
+  margin-top: 40px;
+}
+
+.state{
+  margin: 15px 0px;
 }
