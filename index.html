@@ -12,9 +12,10 @@
   <link rel="stylesheet" href="css/mystyle.css">
 
 
+  <!-- Linking jQuery -->
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   
-  <!-- <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script> -->
+
 </head>
 <body>
   <!-- This is the blue navbar -->
@@ -65,7 +66,9 @@
 
         <!-- Submit Button -->
       <div class="row center">
-        <button id="download-button" class="btn-large waves-effect waves-light orange submitButton">SUBMIT</button>
+        <button id="download-button" class="btn-large waves-effect waves-light orange submitButton">
+          <a href="#one" class="white-text">SUBMIT</a>
+        </button>
       </div>
       <br><br>
 
@@ -75,7 +78,7 @@
   <br><br><br>
 
   <!-- Weather Results Area -->
-      <div class="weatherContainer">
+      <div class="weatherContainer" id="one">
         <br><br>
         <h3 class="header orange-text">Weather</h3>
         <div class="row">
@@ -177,10 +180,5 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="js/app.js"></script>
-
-
-  <!-- <script src="parallax.js-1.5.0/parallax.min.js"></script> -->
-
-
   </body>
 </html>
