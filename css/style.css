@@ -1,0 +1,41 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.inputArea{
+  background-color: rgb(242, 251, 255);
+}
+
+.submitButton{
+  margin-top: 40px;
+}
+
+.state{
+  margin: 15px 0px;
+}
+
+.weatherContainer, .activitiesContainer{
+  background-color: rgb(242, 251, 255);
+  margin: 5px 40px;
+  padding: 30px;
+}
+
+
+.icon-block{
+  background-color: white;
+  padding: 20px;
+  overflow:scroll;
+  height: 350px;
+}

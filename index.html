@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="css/mystyle.css">
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  
+  <!-- <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script> -->
+</head>
+<body>
+  <!-- This is the blue navbar -->
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">RecRec</a>
+  </nav>
+
+  <!-- Input area  -->
+  <div class="section no-pad-bot inputArea" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h3 class="header orange-text">Recommending Recreation<br>
+        to Match Your Weather!</h3>
+      <h5 class="header light-blue-text">Enter A Location</h5>
+
+      <!-- City field -->
+      <div class="row">
+        <div class="input-field col s7">
+          <input id="city" type="text" class="validate">
+          <label for="city">City</label>
+        </div>
+
+        <!-- State field -->
+        <select class="browser-default col s1 state">
+          <option value="" disabled selected>State</option>
+          <option value=""></option>
+
+        </select>
+      </div>
+
+      <h5 class="header light-blue-text">Enter A Date</h5>
+
+      <!-- Date Choices, Today plus 4 -->
+          <form action="#">  
+                <input name="group1" type="radio" id="today" checked="checked" />
+                <label for="today">TODAY</label>
+
+                <input name="group1" type="radio" id="date2" />
+                <label for="date2">DATE 2</label>
+            
+                <input name="group1" name="group1" type="radio" id="date3"  />
+                <label for="date3">DATE 3</label>
+
+                <input name="group1" type="radio" id="date4" />
+                <label for="date4">DATE 4</label>
+              </p>
+          </form>
+
+        <!-- Submit Button -->
+      <div class="row center">
+        <button id="download-button" class="btn-large waves-effect waves-light orange submitButton">SUBMIT</button>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+  <br><br><br>
+
+  <!-- Weather Results Area -->
+      <div class="weatherContainer">
+        <br><br>
+        <h3 class="header orange-text">Weather</h3>
+        <div class="row">
+          <!-- General State of Weather -->
+          <div class="col s12 m4">
+            <div class="icon-block generalWeather">
+              <h5 class="center">General State of Weather</h5>
+            </div>
+          </div>
+  
+          <!-- CHance of Rain -->
+          <div class="col s12 m4">
+            <div class="icon-block chanceOfRain">
+              <h5 class="center">Amount of Rain</h5>
+            </div>
+          </div>
+  
+          <!-- Temperature -->
+          <div class="col s12 m4">
+            <div class="icon-block temperature">
+              <h5 class="center">Temperature</h5>
+            </div>
+          </div>
+        </div>
+        <div class="row center">
+          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">New Search</a>
+        </div>
+        <br><br>
+  
+      </div>
+  
+      <br><br><br>
+
+
+  <!-- Activities output -->
+  <div class="activitiesContainer">
+    <br><br>
+    <h3 class="header orange-text">Activities</h3>
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <!-- Activity 1 -->
+        <div class="col s12 m4">
+          <div class="icon-block activity1">
+            <h5 class="center">Put Activity1 here</h5>
+
+          </div>
+        </div>
+
+        <!-- Activity 2 -->
+        <div class="col s12 m4">
+          <div class="icon-block activity2">
+            <h5 class="center">Put Activity2 here</h5>
+
+          </div>
+        </div>
+
+        <!-- Activity 3 -->
+        <div class="col s12 m4">
+          <div class="icon-block activity3">
+            <h5 class="center">Put Activity3 here</h5>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+  </div>
+
+  <br><br><br>
+
+  <!-- Footer -->
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l3 s12">
+          <h5 class="white-text">Team RecRec</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Alex Bradley - Team Leader</a></li>
+            <li><a class="white-text" href="#!">Tim Hayes - Back-end</a></li>
+            <li><a class="white-text" href="#!">Melia Nolen - Front-end</a></li>
+            <li><a class="white-text" href="#!">Ellen Stafford - Front-end</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/app.js"></script>
+
+
+  <!-- <script src="parallax.js-1.5.0/parallax.min.js"></script> -->
+
+
+  </body>
+</html>
