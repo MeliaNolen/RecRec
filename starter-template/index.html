@@ -15,34 +15,50 @@
   <!-- This is the blue navbar -->
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">RecRec</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-
-      <!-- Navbar Link -->
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
   </nav>
 
   <!-- Input area  -->
   <div class="section no-pad-bot blue-grey" id="index-banner">
     <div class="container">
       <br><br>
-      <h3 class="header orange-text">Enter A Location</h3>
+      <h3 class="header orange-text">Recommending Recreation<br>
+        to Match Your Weather!</h3>
+      <h5 class="header light-blue-text">Enter A Location</h5>
+
+      <!-- City field -->
       <div class="row">
         <div class="input-field col s7">
           <input id="city" type="text" class="validate">
           <label for="city">City</label>
         </div>
-        <label>State</label>
-        <select class="browser-default col s5 state">
-          <option value="" disabled selected>Choose your option</option>
-          
+
+        <!-- State field -->
+        <select class="browser-default col s1 state">
+          <option value="" disabled selected>State</option>
+          <option value=""></option>
+
         </select>
       </div>
+
+      <h5 class="header light-blue-text">Enter A Date</h5>
+
+      <!-- Date Choices, Today plus 4 -->
+          <form action="#">  
+                <input name="group1" type="radio" id="today" checked="checked" />
+                <label for="today">TODAY</label>
+
+                <input name="group1" type="radio" id="date2" />
+                <label for="date2">DATE 2</label>
+            
+                <input name="group1" name="group1" type="radio" id="date3"  />
+                <label for="date3">DATE 3</label>
+
+                <input name="group1" type="radio" id="date4" />
+                <label for="date4">DATE 4</label>
+              </p>
+          </form>
+
+        <!-- Submit Button -->
       <div class="row center">
         <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange submitButton">SUBMIT</a>
       </div>
@@ -164,7 +180,8 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-  <script src="app.js"></script>
+  <script src="js/app.js"></script>
+
 
   </body>
 </html>
