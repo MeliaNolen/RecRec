@@ -56,17 +56,20 @@ $(document).on("click", ".submitButton", function() {
         var snow = response.list[0].snow;
         if ( rain && Object.keys(rain).length ) {
             console.log("expected rain = " + rain["3h"])
-            $(".chanceOfRain").html(rain);
+            $(".chanceOfRain").html(rain["3h"]);
         } else{
             console.log("There is no rain in the forecast");
-            $(".chanceOfRain").html("0");
+            rain = 0;
+            $(".chanceOfRain").html(rain);
         }
-        if ( snow && Object.keys(snow).length ) {
+        if (snow && Object.keys(snow).length ) {
             console.log("expected snow = " + snow["3h"])
         } else{
             console.log("There is no snow in the forecast");
+            snow = 0;
         }
         
+
         wind = Math.round(response.list[0].wind.speed);
         console.log("Wind speed is " + wind + " mph");
         
@@ -77,11 +80,20 @@ $(document).on("click", ".submitButton", function() {
         minTemperature = Math.round(response.list[0].main.temp_min);
         console.log("The low during your outing is predicted to be " + minTemperature + "°F");
         $(".temperature").html("High: " + maxTemperature + "Low: " + minTemperature);
+    
+        // Setting Indoor or Outdoor
+        if ((rain + snow < .2) && (maxTemperature < 95) && (minTemperature > 45) && (wind < 20)){
+            var outdoor = true;
+          } else {
+            var outdoor = false;
+          }
+          console.log(outdoor);
     });
     //==============================
 
    
 });
+
 
 
  // Smooth scrolling element
@@ -101,12 +113,11 @@ $(document).on("click", ".submitButton", function() {
 });
 
 
-
+// Clearing the weather elements if you want a new search
 $(document).on("click", ".newSearchButton", function() {
     $(".generalWeather").text("");
     $(".chanceOfRain").text("");
     $(".temperature").text("");
-    console.log("hi");
 });
 
 // Google Places API 
