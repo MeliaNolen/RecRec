@@ -20,21 +20,48 @@ $(document).ready(function(){
 
 
 // Open Weather API
-
-    //==============================
 $(document).on("click", ".submitButton", function() {
+    event.preventDefault();
     
-    var lat = 35.2271;
-    var long = -80.8431;
+    var lat;
+    var long;
+    var geoAPI;
+    var cityInput = $("#city").val().trim();
+    var stateInput = $(".state").val().trim();
+
+    console.log(cityInput);
+    console.log(stateInput);
+
+
+    geoAPI = "https://maps.googleapis.com/maps/api/geocode/json?address=" + cityInput + ",+" + stateInput + "&key=AIzaSyAadbTVL7TxCXH4u9v8RpRQAJWA0pcfp-8";
+    console.log(geoAPI);
+
+    $.ajax({
+        url: geoAPI,
+        method: "GET",
+        success: function (response) {
+        console.log(response.results[0].formatted_address);
+        console.log(response.results[0].geometry.location.lat);
+        console.log(response.results[0].geometry.location.lng);
+
+        lat = response.results[0].geometry.location.lat;
+        long = response.results[0].geometry.location.lng;
+        
+        
+        }
+    });
+    
+    console.log(lat);
+    
+    
     var APIKey = "166a433c57516f51dfab1f7edaed8413";
     var queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + long +
       "&units=imperial&appid=" + APIKey;
 
     $.ajax({
       url: queryURL,
-      method: "GET"
-    })
-      .then(function(response) {
+      method: "GET",
+      success: function(response) {
         console.log(response);
     
         weatherIcon = response.list[0].weather[0].icon;
@@ -88,16 +115,14 @@ $(document).on("click", ".submitButton", function() {
             var outdoor = false;
           }
           console.log(outdoor);
+        }
     });
-    //==============================
-
-   
 });
 
 
 
  // Smooth scrolling element
- $(document).on("click", 'a[href*=#]:not([href=#])', function() {
+$(document).on("click", 'a[href*=#]:not([href=#])', function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
         || location.hostname == this.hostname) {
 
