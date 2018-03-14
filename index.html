@@ -7,6 +7,10 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!-- Bootstrap -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+   crossorigin="anonymous">
+   <!-- Materialize -->
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link rel="stylesheet" href="css/mystyle.css">
@@ -28,6 +32,8 @@
       <h3 class="header orange-text">Recommending Recreation</h3>
       <h5>Select your city, day and time.</h5>
       <h6 class="header light-blue-text">Location</h6>
+
+    <form> 
       <!-- City field -->
       <div class="row">
         <div class="input-field col s7">
@@ -45,7 +51,37 @@
 
       <h6 class="header light-blue-text">Day</h6>
 
-      <!-- Date Choices, Today plus 4 -->
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active">
+              <input type="radio" name="options" id="option1" autocomplete="off" checked> Today
+          </label>
+          <label class="btn btn-secondary">
+              <input type="radio" name="options" id="option2" autocomplete="off"> Thursday, March 15th
+          </label>
+          <label class="btn btn-secondary">
+              <input type="radio" name="options" id="option3" autocomplete="off"> Friday, March 16th
+          </label>
+          <label class="btn btn-secondary">
+              <input type="radio" name="options" id="option3" autocomplete="off"> Saturday, March 17th
+          </label>
+      </div>
+      <br>
+      <br>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active">
+              <input type="radio" name="options" id="option1" autocomplete="off" checked>Morning
+          </label>
+          <label class="btn btn-secondary">
+              <input type="radio" name="options" id="option2" autocomplete="off">Afternoon
+          </label>
+          <label class="btn btn-secondary">
+              <input type="radio" name="options" id="option3" autocomplete="off">Evening
+          </label>
+      </div>
+      <br>
+      <br>
+
+      <!-- Date Choices, Today plus 4 
           <form action="#">  
                 <input name="group1" type="radio" id="today" checked="checked" />
                 <label for="today">TODAY</label>
@@ -59,13 +95,14 @@
                 <input name="group1" type="radio" id="date4" />
                 <label for="date4">DATE 4</label>
               </p>
-          </form>
+          </form> -->
 
         <!-- Submit Button -->
       <div class="row center">
         <button id="download-button" class="btn-large waves-effect waves-light orange submitButton">SUBMIT</button>
       </div>
     </div>
+  </form> 
 
   <!-- Weather and Activity Area -->
   <div class = "row container">
@@ -147,13 +184,15 @@
 
 
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="js/app.js"></script>
 
-
-  <!-- <script src="parallax.js-1.5.0/parallax.min.js"></script> -->
 
 
   </body>
