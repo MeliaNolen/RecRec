@@ -3,10 +3,14 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Starter Template - Materialize</title>
+  <title>RecRec - Recommending Recreation!</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!-- Bootstrap -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+   crossorigin="anonymous">
+   <!-- Materialize -->
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link rel="stylesheet" href="css/mystyle.css">
@@ -26,13 +30,13 @@
   </nav>
 
   <!-- Input area  -->
-  <div class="section no-pad-bot inputArea" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h3 class="header orange-text">Recommending Recreation<br>
-        to Match Your Weather!</h3>
-      <h5 class="header light-blue-text">Enter A Location</h5>
+  <div class="section no-pad-bottom" id="index-banner">
+    <div class="container inputArea z-depth-2">
+      <h3 class="header orange-text">Recommending Recreation</h3>
+      <h5>Select your city, day and time.</h5>
+      <h6 class="header light-blue-text">Location</h6>
 
+    <form> 
       <!-- City field -->
       <div class="row">
         <div class="input-field col s7">
@@ -48,9 +52,39 @@
         </select>
       </div>
 
-      <h5 class="header light-blue-text">Enter A Date</h5>
+      <h6 class="header light-blue-text">Day</h6>
 
-      <!-- Date Choices, Today plus 4 -->
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active">
+              <input type="radio" name="options" id="option1" autocomplete="off" checked> Today
+          </label>
+          <label class="btn btn-secondary">
+              <input type="radio" name="options" id="option2" autocomplete="off"> Thursday, March 15th
+          </label>
+          <label class="btn btn-secondary">
+              <input type="radio" name="options" id="option3" autocomplete="off"> Friday, March 16th
+          </label>
+          <label class="btn btn-secondary">
+              <input type="radio" name="options" id="option3" autocomplete="off"> Saturday, March 17th
+          </label>
+      </div>
+      <br>
+      <br>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active">
+              <input type="radio" name="options" id="option1" autocomplete="off" checked>Morning
+          </label>
+          <label class="btn btn-secondary">
+              <input type="radio" name="options" id="option2" autocomplete="off">Afternoon
+          </label>
+          <label class="btn btn-secondary">
+              <input type="radio" name="options" id="option3" autocomplete="off">Evening
+          </label>
+      </div>
+      <br>
+      <br>
+
+      <!-- Date Choices, Today plus 4 
           <form action="#">  
                 <input name="group1" type="radio" id="today" checked="checked" />
                 <label for="today"><span class="day0"></span></label>
@@ -64,7 +98,7 @@
                 <input name="group1" type="radio" id="date4" />
                 <label for="date4"><span class="day3"></span></label>
               </p>
-          </form>
+          </form> -->
 
         <!-- Submit Button -->
       <div class="row center">
@@ -75,57 +109,35 @@
           </a>
         
       </div>
-      <br><br>
-
     </div>
-  </div>
 
-  <br><br><br>
+  </form> 
 
-  <!-- Weather Results Area -->
-      <div class="weatherContainer" id="one">
-        <br><br>
-        <h3 class="header orange-text">Weather</h3>
-        <div class="row">
-          <!-- General State of Weather -->
-          <div class="col s12 m4">
-            <div class="icon-block">
-              <h5 class="center">General State of Weather</h5>
-              <div class="generalWeather"></div>
-            </div>
+  <!-- Weather and Activity Area -->
+  <div class = "row container">
+      <!-- Weather Results Area -->
+          <div class="card weather col s12 m7">
+              <div class="card-content">
+                <h5>Weather</h5>
+                  <div weatherHere></div>
+              </div>
           </div>
-  
-          <!-- CHance of Rain -->
-          <div class="col s12 m4">
-            <div class="icon-block">
-              <h5 class="center">Amount of Rain</h5>
-              <div class="chanceOfRain"></div>
-            </div>
-          </div>
-  
-          <!-- Temperature -->
-          <div class="col s12 m4">
-            <div class="icon-block">
-              <h5 class="center">Temperature</h5>
-              <div class="temperature"></div>
-            </div>
-          </div>
-        </div>
-        <a href="#index-banner" class="white-text">
-            <button id="download-button" class="btn-large waves-effect waves-light orange newSearchButton">
-              New Search
-            </button>
-        </a>
-        <br><br>
-  
-      </div>
-  
-      <br><br><br>
 
+        <!-- Indoor or Outdoor Actiity Area -->
+        <div class="card ioActivity col s12 m4">
+              <div class="card-content">
+                <h5>We Recommend</h5>
+                <div indoorOrOutdoor>
+                    <img src="./images/Outdoor_100px.png" alt="Outdoor Activity">
+                </div>
+              </div>
+          </div>
+    </div>
 
+  
+  
   <!-- Activities output -->
-  <div class="activitiesContainer">
-    <br><br>
+  <div class="activitiesContainer z-depth-2">
     <h3 class="header orange-text">Activities</h3>
     <div class="section">
 
@@ -133,7 +145,7 @@
       <div class="row">
         <!-- Activity 1 -->
         <div class="col s12 m4">
-          <div class="icon-block activity1">
+          <div class="icon-block activity1 z-depth-1">
             <h5 class="center">Put Activity1 here</h5>
 
           </div>
@@ -141,7 +153,7 @@
 
         <!-- Activity 2 -->
         <div class="col s12 m4">
-          <div class="icon-block activity2">
+          <div class="icon-block activity2 z-depth-1">
             <h5 class="center">Put Activity2 here</h5>
 
           </div>
@@ -149,27 +161,29 @@
 
         <!-- Activity 3 -->
         <div class="col s12 m4">
-          <div class="icon-block activity3">
+          <div class="icon-block activity3 z-depth-1">
             <h5 class="center">Put Activity3 here</h5>
 
           </div>
         </div>
+
+      </div>
+
       </div> 
       <!-- Do not delete, needed for Google Places -->
       <div class="replaceMe"></div>
 
+
     </div>
-    <br><br>
   </div>
 
-  <br><br><br>
 
   <!-- Footer -->
   <footer class="page-footer orange">
     <div class="container">
       <div class="row">
         <div class="col l3 s12">
-          <h5 class="white-text">Team RecRec</h5>
+          <h5 class="white-text">Team WeRec</h5>
           <ul>
             <li><a class="white-text" href="#!">Alex Bradley - Team Leader</a></li>
             <li><a class="white-text" href="#!">Tim Hayes - Back-end</a></li>
@@ -188,10 +202,16 @@
 
 
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="js/app.js"></script>
+
+
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV2Fw-8WsHAl0X3JZqBEg0GggdI6qtngw&libraries=places&callback=initPlaces"></script>
   </body>
 </html>

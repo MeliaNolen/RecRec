@@ -5,6 +5,9 @@
  *
  * Made By MaterializeCSS.com
  */
+ body {
+  background: url("./icons/gplaypattern.png") lightgray;
+}
 
 .icon-block {
   padding: 0 15px;
@@ -14,8 +17,15 @@
 	font-size: inherit;
 }
 
+h3 {
+  text-align: center;
+}
+
 .inputArea{
-  background-color: rgb(242, 251, 255);
+  background-color: rgb(253, 253, 239);
+  padding: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .submitButton{
@@ -26,9 +36,21 @@
   margin: 15px 0px;
 }
 
-.weatherContainer, .activitiesContainer{
+.weather{
+  margin-right: 50px;
+}
+
+.row{
+  padding-left: 30px
+}
+
+img{
+  margin: auto auto;
+}
+
+.activitiesContainer{
   background-color: rgb(242, 251, 255);
-  margin: 5px 40px;
+  margin: 30px 40px;
   padding: 30px;
 }
 
