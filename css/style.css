@@ -6,7 +6,7 @@
  * Made By MaterializeCSS.com
  */
  body {
-  background: url("./icons/gplaypattern.png") blue;
+  background: url("./icons/gplaypattern.png") lightgray;
 }
 
 .icon-block {
@@ -25,6 +25,7 @@ h3 {
   background-color: rgb(253, 253, 239);
   padding: 30px;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .submitButton{
@@ -35,7 +36,15 @@ h3 {
   margin: 15px 0px;
 }
 
-.weatherContainer, .activitiesContainer{
+.weather{
+  margin-right: 50px;
+}
+
+.row{
+  padding-left: 30px
+}
+
+.activitiesContainer{
   background-color: rgb(242, 251, 255);
   margin: 30px 40px;
   padding: 30px;
