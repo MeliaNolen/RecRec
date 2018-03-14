@@ -40,11 +40,11 @@ $(document).on("click", ".submitButton", function() {
         weatherIcon = response.list[0].weather[0].icon;
         var weatherIconLink = "http://openweathermap.org/img/w/" + weatherIcon + ".png";
         console.log(weatherIconLink);
-        $(".generalWeather").append("<img src=" + weatherIconLink + "><br>");
 
         generalCondition = response.list[0].weather[0].main;
         console.log("Overall conditions = " + generalCondition);
-        $(".generalWeather").append(generalCondition);
+        $(".generalWeather").html("<img id='icon' src=" + weatherIconLink + "><br>" +
+                "<p>" + generalCondition + "</p>");
 
         cloudCover = response.list[0].clouds.all;
         console.log("Cloud cover = " + cloudCover +"%");
@@ -56,10 +56,10 @@ $(document).on("click", ".submitButton", function() {
         var snow = response.list[0].snow;
         if ( rain && Object.keys(rain).length ) {
             console.log("expected rain = " + rain["3h"])
-            $(".chanceOfRain").append(rain);
+            $(".chanceOfRain").html(rain);
         } else{
             console.log("There is no rain in the forecast");
-            $(".chanceOfRain").append("0");
+            $(".chanceOfRain").html("0");
         }
         if ( snow && Object.keys(snow).length ) {
             console.log("expected snow = " + snow["3h"])
@@ -72,35 +72,41 @@ $(document).on("click", ".submitButton", function() {
         
         maxTemperature = Math.round(response.list[0].main.temp_max);
         console.log("The high during your outing is predicted to be " + maxTemperature + "°F");
-        $(".temperature").append("High: " + maxTemperature);
+        
         
         minTemperature = Math.round(response.list[0].main.temp_min);
         console.log("The low during your outing is predicted to be " + minTemperature + "°F");
-        $(".temperature").append("Low: " + minTemperature);
+        $(".temperature").html("High: " + maxTemperature + "Low: " + minTemperature);
     });
     //==============================
 
-    // Smooth scrolling element
-    $('a[href*=#]:not([href=#])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
-            || location.hostname == this.hostname) {
-
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-            if (target.length) {
-                $('html,body').animate({
-                    scrollTop: target.offset().top
-                }, 1000);
-                return false;
-            }
-        }
-    });
+   
 });
 
-$(document).on("click", "#download-button", function() {
-    $(".generalWeather").empty();
-    $(".chanceOfRain").empty();
-    $(".temperature").empty();
+
+ // Smooth scrolling element
+ $(document).on("click", 'a[href*=#]:not([href=#])', function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+        || location.hostname == this.hostname) {
+
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+            $('html,body').animate({
+                scrollTop: target.offset().top
+            }, 1000);
+            return false;
+        }
+    }
+});
+
+
+
+$(document).on("click", ".newSearchButton", function() {
+    $(".generalWeather").text("");
+    $(".chanceOfRain").text("");
+    $(".temperature").text("");
+    console.log("hi");
 });
 
 // Google Places API 
