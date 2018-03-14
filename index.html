@@ -16,9 +16,12 @@
   <link rel="stylesheet" href="css/mystyle.css">
 
 
+  <!-- Linking jQuery -->
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   
-  <!-- <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script> -->
+  <!-- Moment.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.js"></script>
+
 </head>
 <body>
   <!-- This is the blue navbar -->
@@ -84,24 +87,30 @@
       <!-- Date Choices, Today plus 4 
           <form action="#">  
                 <input name="group1" type="radio" id="today" checked="checked" />
-                <label for="today">TODAY</label>
+                <label for="today"><span class="day0"></span></label>
 
                 <input name="group1" type="radio" id="date2" />
-                <label for="date2">DATE 2</label>
+                <label for="date2"><span class="day1"></span></label>
             
                 <input name="group1" name="group1" type="radio" id="date3"  />
-                <label for="date3">DATE 3</label>
+                <label for="date3"><span class="day2"></span></label>
 
                 <input name="group1" type="radio" id="date4" />
-                <label for="date4">DATE 4</label>
+                <label for="date4"><span class="day3"></span></label>
               </p>
           </form> -->
 
         <!-- Submit Button -->
       <div class="row center">
-        <button id="download-button" class="btn-large waves-effect waves-light orange submitButton">SUBMIT</button>
+          <a href="#one" class="white-text">
+            <button id="download-button" class="btn-large waves-effect waves-light orange submitButton">
+              SUBMIT
+            </button>
+          </a>
+        
       </div>
     </div>
+
   </form> 
 
   <!-- Weather and Activity Area -->
@@ -124,6 +133,8 @@
               </div>
           </div>
     </div>
+
+  
   
   <!-- Activities output -->
   <div class="activitiesContainer z-depth-2">
@@ -155,7 +166,14 @@
 
           </div>
         </div>
+
       </div>
+
+      </div> 
+      <!-- Do not delete, needed for Google Places -->
+      <div class="replaceMe"></div>
+
+
     </div>
   </div>
 
@@ -194,6 +212,6 @@
   <script src="js/app.js"></script>
 
 
-
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV2Fw-8WsHAl0X3JZqBEg0GggdI6qtngw&libraries=places&callback=initPlaces"></script>
   </body>
 </html>
