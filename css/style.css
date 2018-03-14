@@ -44,6 +44,10 @@ h3 {
   padding-left: 30px
 }
 
+img{
+  margin: auto auto;
+}
+
 .activitiesContainer{
   background-color: rgb(242, 251, 255);
   margin: 30px 40px;

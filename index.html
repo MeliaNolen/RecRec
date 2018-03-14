@@ -26,8 +26,8 @@
   <div class="section no-pad-bottom" id="index-banner">
     <div class="container inputArea z-depth-2">
       <h3 class="header orange-text">Recommending Recreation</h3>
-      <p>Select your city, the day and the time.</p>
-      <h5 class="header light-blue-text">Location</h5>
+      <h5>Select your city, day and time.</h5>
+      <h6 class="header light-blue-text">Location</h6>
       <!-- City field -->
       <div class="row">
         <div class="input-field col s7">
@@ -43,7 +43,7 @@
         </select>
       </div>
 
-      <h5 class="header light-blue-text">Day</h5>
+      <h6 class="header light-blue-text">Day</h6>
 
       <!-- Date Choices, Today plus 4 -->
           <form action="#">  
@@ -70,47 +70,23 @@
   <!-- Weather and Activity Area -->
   <div class = "row container">
       <!-- Weather Results Area -->
-          <div class="card horizontal weather col s12 m7">
-            <div class="card-image">
-              <img src="https://lorempixel.com/100/190/nature/6">
-            </div>
-            <div class="card-stacked">
+          <div class="card weather col s12 m7">
               <div class="card-content">
-                <p>Weather</p>
+                <h5>Weather</h5>
+                  <div weatherHere></div>
               </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
-            </div>
           </div>
 
         <!-- Indoor or Outdoor Actiity Area -->
-        <div class="card horizontal ioActivity col s12 m4">
-            <div class="card-image">
-              <img src="https://lorempixel.com/100/190/nature/6">
-            </div>
-            <div class="card-stacked">
+        <div class="card ioActivity col s12 m4">
               <div class="card-content">
-                <p>We Recommend</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
-    </div>
-
-
-
-        <!-- Indoor or Outdoor Actiity Area 
-            <div class="row">
-              <div class="col s5 m4">
-                <div class="icon-block generalWeather z-depth-1">
-                  <h5 class="center">We Recommend</h5>
+                <h5>We Recommend</h5>
+                <div indoorOrOutdoor>
+                    <img src="./images/Outdoor_100px.png" alt="Outdoor Activity">
                 </div>
               </div>
           </div>
-        </div> -->
+    </div>
   
   <!-- Activities output -->
   <div class="activitiesContainer z-depth-2">
