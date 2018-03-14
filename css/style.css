@@ -1,0 +1,63 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+ body {
+  background: url("./icons/gplaypattern.png") lightgray;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+h3 {
+  text-align: center;
+}
+
+.inputArea{
+  background-color: rgb(253, 253, 239);
+  padding: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.submitButton{
+  margin-top: 40px;
+}
+
+.state{
+  margin: 15px 0px;
+}
+
+.weather{
+  margin-right: 50px;
+}
+
+.row{
+  padding-left: 30px
+}
+
+img{
+  margin: auto auto;
+}
+
+.activitiesContainer{
+  background-color: rgb(242, 251, 255);
+  margin: 30px 40px;
+  padding: 30px;
+}
+
+
+.icon-block{
+  background-color: white;
+  padding: 20px;
+  overflow:scroll;
+  height: 350px;
+}
