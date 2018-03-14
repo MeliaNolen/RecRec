@@ -53,16 +53,16 @@
       <!-- Date Choices, Today plus 4 -->
           <form action="#">  
                 <input name="group1" type="radio" id="today" checked="checked" />
-                <label for="today">TODAY</label>
+                <label for="today"><span class="day0"></span></label>
 
                 <input name="group1" type="radio" id="date2" />
-                <label for="date2">DATE 2</label>
+                <label for="date2"><span class="day1"></span></label>
             
                 <input name="group1" name="group1" type="radio" id="date3"  />
-                <label for="date3">DATE 3</label>
+                <label for="date3"><span class="day2"></span></label>
 
                 <input name="group1" type="radio" id="date4" />
-                <label for="date4">DATE 4</label>
+                <label for="date4"><span class="day3"></span></label>
               </p>
           </form>
 
@@ -154,7 +154,9 @@
 
           </div>
         </div>
-      </div>
+      </div> 
+      <!-- Do not delete, needed for Google Places -->
+      <div class="replaceMe"></div>
 
     </div>
     <br><br>
@@ -190,5 +192,6 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="js/app.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV2Fw-8WsHAl0X3JZqBEg0GggdI6qtngw&libraries=places&callback=initPlaces"></script>
   </body>
 </html>
