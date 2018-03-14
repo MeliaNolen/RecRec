@@ -22,7 +22,7 @@ $(document).ready(function(){
 // Open Weather API
 
     //==============================
-$(".submitButton").on("click", function() {
+$(document).on("click", ".submitButton", function() {
     
     var lat = 35.2271;
     var long = -80.8431;
@@ -40,7 +40,7 @@ $(".submitButton").on("click", function() {
         weatherIcon = response.list[0].weather[0].icon;
         var weatherIconLink = "http://openweathermap.org/img/w/" + weatherIcon + ".png";
         console.log(weatherIconLink);
-        $(".generalWeather").append("<img src=" + weatherIconLink + ">");
+        $(".generalWeather").append("<img src=" + weatherIconLink + "><br>");
 
         generalCondition = response.list[0].weather[0].main;
         console.log("Overall conditions = " + generalCondition);
@@ -95,6 +95,12 @@ $(".submitButton").on("click", function() {
             }
         }
     });
+});
+
+$(document).on("click", "#download-button", function() {
+    $(".generalWeather").empty();
+    $(".chanceOfRain").empty();
+    $(".temperature").empty();
 });
 
 // Google Places API 
