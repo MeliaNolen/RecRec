@@ -8,6 +8,9 @@
 
   <title>RecRec</title>
 
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <!-- Compiled and minified JavaScript -->
@@ -22,8 +25,7 @@
   <!-- Moment.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.js"></script>
 
-  <!--Import jQuery before materialize.js-->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 
 </head>
 
@@ -32,20 +34,47 @@
     <form class="col s12">
       <div class="row">
         <div class="input-field col s6">
-          <input placeholder="Ex. Los Angeles" id="cityInput" type="text" class="validate">
+          <input placeholder="Ex. Los Angeles" id="city" type="text" class="validate">
           <label for="first_name">City</label>
         </div>
         <div class="input-field col s6">
-          <input placeholder="Ex. CA or California" id="stateInput" type="text" class="validate">
+          <input placeholder="Ex. CA or California" id="state" type="text" class="validate">
           <label for="first_name">State</label>
         </div>
       </div>
-
+      <p>
+        <input name="group1" type="radio" id="todaySelect" />
+        <label for="test1">
+          <span class="day0"></span>
+        </label>
+      </p>
+      <p>
+        <input name="group1" type="radio" id="today1Select" />
+        <label for="test2">
+          <span class="day1"></span>
+        </label>
+      </p>
+      <p>
+        <input name="group1" type="radio" id="today1Select" />
+        <label for="test2">
+          <span class="day2"></span>
+        </label>
+      </p>
+      <p>
+        <input name="group1" type="radio" id="today1Select" />
+        <label for="test2">
+          <span class="day3"></span>
+        </label>
+      </p>
       <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit</button>
     </form>
   </div>
+  <ul class="activityContent">
+  </ul>
+  <div class="replaceMe"></div>
   <script src="assets/javascript/materialize.js"></script>
   <script src="assets/javascript/app.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV2Fw-8WsHAl0X3JZqBEg0GggdI6qtngw&libraries=places&callback=initPlaces"></script>
 </body>
 
 </html>
