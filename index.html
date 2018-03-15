@@ -7,9 +7,7 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-   <!-- Bootstrap -->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-   crossorigin="anonymous">
+   
    <!-- Materialize -->
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -32,10 +30,12 @@
 
   <!-- Input area  -->
   <div class="section no-pad-bottom" id="index-banner">
-    <div class="container inputArea z-depth-2">
+
+    <div class="container inputArea z-depth-2 formContainer">
       <h3 class="header">Recommending Recreation</h3>
       <h5 class="header blue-grey-text">Select your city, day and time.</h5>
       <h6 class="header blue-grey-text">Location</h6>
+
 
     <form> 
       <!-- City field -->
@@ -117,39 +117,79 @@
 
         <!-- Submit Button -->
       <div class="row center">
-          <a href="#one" class="white-text">
+
+          
              <!-- <button id="download-button" class="btn-large waves-effect waves-light orange submitButton"> -->
             <button id="download-button" class="btn-large waves-effect waves-light submitButton">
               SUBMIT
             </button>
-          </a>
+        
+
         
       </div>
     </div>
 
   </form> 
-
+  <!-- new search btn here -->
+  <div class="center-align newSearchButton">
+    
+  </div>
+  <br>
   <!-- Weather and Activity Area -->
-  <div class = "row container">
+  <div class="row weatherContainer">
       <!-- Weather Results Area -->
-          <div class="card weather col s12 m7">
-              <div class="card-content">
-                <h5>Weather</h5>
-                  <div weatherHere></div>
-              </div>
-          </div>
+      <div class=" col s12 l7">
+        <div class="card weather">
 
-        <!-- Indoor or Outdoor Actiity Area -->
-        <div class="card ioActivity col s12 m4">
-              <div class="card-content">
-                <h5>We Recommend</h5>
-                <div indoorOrOutdoor>
-                    <img src="./images/Outdoor_100px.png" alt="Outdoor Activity">
-                </div>
-              </div>
+          <div class="card-content">
+            <div>
+                <div class="row">
+                    <h5>Weather for
+                      <span class="selectedDay"></span>
+                    </h5>
+                  </div>
+                  <div class="row">
+                    <div class="col s4">
+                      General Conditions
+      
+                    </div>
+                    <div class="col s4">
+                      <span class="changeToSnow">Rain</span>
+                      
+                    </div>
+                    <div class="col s4">
+                      Avg. Temp
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="generalWeather col s4">
+        
+                      </div>
+                      <div class="chanceOfRain col s4">
+                        
+                      </div>
+                      <div class="temperature col s4">
+                      </div>
+                    </div>
+            </div>
           </div>
+        </div>
     </div>
+    <!-- Indoor or Outdoor Activity Area -->
+    <div class="col s12 l5">
+        <div class="card ioActivity">
 
+          <div class="card-content">
+            <h5>We recommend
+              <span class="recInOrOut"></span>
+            </h5>
+            <div class="inOrOut">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   
   
   <!-- Activities output -->
@@ -158,40 +198,33 @@
     <div class="section">
 
       <!--   Icon Section   -->
-      <div class="row">
+      
         <!-- Activity 1 -->
-        <div class="col s12 m4">
-          <div class="icon-block activity1 z-depth-1">
-            <h5 class="center">Put Activity1 here</h5>
-
-          </div>
+        
+        <div class="collection activity0">
+          
         </div>
-
+        
+       
         <!-- Activity 2 -->
-        <div class="col s12 m4">
-          <div class="icon-block activity2 z-depth-1">
-            <h5 class="center">Put Activity2 here</h5>
-
-          </div>
+        <div class="collection activity1">
+          
         </div>
-
+        
         <!-- Activity 3 -->
-        <div class="col s12 m4">
-          <div class="icon-block activity3 z-depth-1">
-            <h5 class="center">Put Activity3 here</h5>
-
-          </div>
+        <div class="collection activity2">
+          
         </div>
 
-      </div>
-
-      </div> 
+      
+      
       <!-- Do not delete, needed for Google Places -->
       <div class="replaceMe"></div>
 
 
     </div>
   </div>
+
 
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
@@ -214,6 +247,13 @@
         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Okay</a>
       </div>
     </div>
+
+  <!-- duplicate new search button -->
+  <div class="center-align newSearchButton">
+    
+  </div>
+  <br>
+
 
   <!-- Footer -->
   <footer class="page-footer teal darken-3">

@@ -14,7 +14,7 @@
 }
 
 .icon-block .material-icons {
-	font-size: inherit;
+    font-size: inherit;
 }
 
 h3 {
@@ -40,22 +40,34 @@ h3 {
   margin: 15px 0px;
 }
 
-.weather{
-  margin-right: 50px;
-}
-
-.row{
-  padding-left: 30px
-}
-
 img{
   margin: auto auto;
 }
 
+.weatherContainer{
+  display: none;
+  margin: 0px 30px;
+  text-align: center;
+  font-size: 20px;
+
+}
+
+.gen {
+  font-size: 32px;
+}
+
+.prec {
+  font-size: 32px;
+}
+
+.temp {
+  font-size: 38px;
+}
 .activitiesContainer{
   background-color: #b2dfdb;
+  display: none;
   margin: 30px 40px;
-  padding: 30px;
+  padding: 20px;
 }
 
 
@@ -65,6 +77,7 @@ img{
   overflow:scroll;
   height: 350px;
 }
+
 
 /* Colors for Radio Buttons */
 .btn {
@@ -79,3 +92,4 @@ img{
   max-height: null;
   height: 42%;
 }
+
