@@ -2,79 +2,265 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>RecRec - Recommending Recreation!</title>
 
-  <title>RecRec</title>
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Materialize -->
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link rel="stylesheet" href="css/mystyle.css">
 
-  <!--Import jQuery before materialize.js-->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
-  <link rel="stylesheet" href="assets/css/materialize.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-
-  <!-- Firebase Reference -->
-  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+  <!-- Linking jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
   <!-- Moment.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.js"></script>
 
-
-
 </head>
 
 <body>
-  <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Ex. Los Angeles" id="city" type="text" class="validate">
-          <label for="first_name">City</label>
+  <!-- This is the blue navbar -->
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">RecRec</a>
+  </nav>
+
+  <!-- Input area  -->
+  <div class="section no-pad-bottom" id="index-banner">
+    <div class="container inputArea z-depth-2 formContainer">
+      <h3 class="header orange-text">Recommending Recreation</h3>
+      <h5>Select your city, day and time.</h5>
+      <h6 class="header light-blue-text">Location</h6>
+
+      <form>
+        <!-- City field -->
+        <div class="row">
+          <div class="input-field col s7">
+            <input id="city" type="text" class="validate">
+            <label for="city">City</label>
+          </div>
+
+          <!-- State field -->
+          <select class="browser-default col s5 state">
+            <option value="" disabled selected>State</option>
+            <option value=""></option>
+
+          </select>
         </div>
-        <div class="input-field col s6">
-          <input placeholder="Ex. CA or California" id="state" type="text" class="validate">
-          <label for="first_name">State</label>
+
+        <!-- Submit Button -->
+        <div class="row center">
+          <a href="#one" class="white-text">
+            <button id="download-button" class="btn-large waves-effect waves-light orange submitButton">
+              SUBMIT
+            </button>
+          </a>
+
+        </div>
+    </div>
+
+    </form>
+
+    <!-- Weather and Activity Area -->
+    <div class="row weatherContainer">
+      <!-- Weather Results Area -->
+      <div class=" col s12 l7">
+        <div class="card weather">
+
+          <div class="card-content">
+            <div>
+                <div class="row">
+                    <h5>Weather for
+                      <span class="selectedDay"></span>
+                    </h5>
+                  </div>
+                  <div class="row">
+                    <div class="col s4">
+                      General Conditions
+      
+                    </div>
+                    <div class="col s4">
+                      <span class="changeToSnow">Rain</span>
+                      
+                    </div>
+                    <div class="col s4">
+                      Avg. Temp
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="generalWeather col s4">
+        
+                      </div>
+                      <div class="chanceOfRain col s4">
+                        
+                      </div>
+                      <div class="temperature col s4">
+                      </div>
+                    </div>
+            </div>
+          </div>
         </div>
       </div>
-      <p>
-        <input name="group1" type="radio" id="todaySelect" />
-        <label for="test1">
-          <span class="day0"></span>
-        </label>
-      </p>
-      <p>
-        <input name="group1" type="radio" id="today1Select" />
-        <label for="test2">
-          <span class="day1"></span>
-        </label>
-      </p>
-      <p>
-        <input name="group1" type="radio" id="today1Select" />
-        <label for="test2">
-          <span class="day2"></span>
-        </label>
-      </p>
-      <p>
-        <input name="group1" type="radio" id="today1Select" />
-        <label for="test2">
-          <span class="day3"></span>
-        </label>
-      </p>
-      <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit</button>
-    </form>
+
+      <!-- Indoor or Outdoor Activity Area -->
+      <div class="col s12 l5">
+        <div class="card ioActivity">
+
+          <div class="card-content">
+            <h5>We recommend
+              <span class="recInOrOut"></span>
+            </h5>
+            <div class="inOrOut">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Activities output -->
+    <div class="activitiesContainer z-depth-2">
+      <h3 class="header orange-text">Activities</h3>
+      <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row">
+          <!-- Activity 1 -->
+          <div class="col s12 m4">
+            <div class="icon-block activity1 z-depth-1">
+              <h5 class="center">Put Activity1 here</h5>
+
+            </div>
+          </div>
+
+          <!-- Activity 2 -->
+          <div class="col s12 m4">
+            <div class="icon-block activity2 z-depth-1">
+              <h5 class="center">Put Activity2 here</h5>
+
+            </div>
+          </div>
+
+          <!-- Activity 3 -->
+          <div class="col s12 m4">
+            <div class="icon-block activity3 z-depth-1">
+              <h5 class="center">Put Activity3 here</h5>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- Do not delete, needed for Google Places -->
+      <div class="replaceMe"></div>
+
+
+    </div>
   </div>
-  <ul class="activityContent">
-  </ul>
-  <div class="replaceMe"></div>
-  <script src="assets/javascript/materialize.js"></script>
-  <script src="assets/javascript/app.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV2Fw-8WsHAl0X3JZqBEg0GggdI6qtngw&libraries=places&callback=initPlaces"></script>
+
+
+  <!-- Footer -->
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l3 s12">
+          <h5 class="white-text">Team WeRec</h5>
+          <ul>
+            <li>
+              <a class="white-text" href="#!">Alex Bradley - Team Leader</a>
+            </li>
+            <li>
+              <a class="white-text" href="#!">Tim Hayes - Back-end</a>
+            </li>
+            <li>
+              <a class="white-text" href="#!">Melia Nolen - Front-end</a>
+            </li>
+            <li>
+              <a class="white-text" href="#!">Ellen Stafford - Front-end</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Made by
+        <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/app.js"></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV2Fw-8WsHAl0X3JZqBEg0GggdI6qtngw&libraries=places&callback=initPlaces"></script>
 </body>
 
 </html>
+<!-- Bootstrap
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">  -->
+<!--
+Buttons per Bootstrap
+
+<h6 class="header light-blue-text">Time</h6>
+<div data-toggle="buttons">
+  <label class="btn btn-block btn-secondary rounded-0 active">
+    <input type="radio" name="options" id="today" autocomplete="off" checked>
+    <span class="day0"></span>
+  </label>
+  <label class="btn btn-block rounded-0 btn-secondary">
+    <input type="radio" name="options" id="date2" autocomplete="off">
+    <span class="day1"></span>
+  </label>
+  <label class="btn btn-block rounded-0 btn-secondary">
+    <input type="radio" name="options" id="date3" autocomplete="off">
+    <span class="day2"></span>
+  </label>
+  <label class="btn btn-block rounded-0 btn-secondary">
+    <input type="radio" name="options" id="date4" autocomplete="off">
+    <span class="day3"></span>
+  </label>
+</div>
+<br>
+<br>
+<div data-toggle="buttons">
+  <label class="btn btn-block rounded-0 btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off">Morning
+  </label>
+  <label class="btn btn-block rounded-0 btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off" checked>Afternoon
+  </label>
+  <label class="btn btn-block rounded-0 btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off">Evening
+  </label>
+</div>
+<br>
+<br>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+
+css media query
+@media only screen and (min-width: 1200px) {
+
+.btn-block{
+  padding: 10px;
+  display:inline;
+}
+}
+-->
