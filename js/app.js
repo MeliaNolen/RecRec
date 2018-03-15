@@ -399,7 +399,7 @@ function WeatherCall(lat, long) {
         };
 
     };
-};
+
 
 
 
