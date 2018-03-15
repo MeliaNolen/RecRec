@@ -19,8 +19,13 @@
 
 h3 {
   color:#056571;
-  text-shadow: 1px 1px #414141;
+  /*text-shadow: 1px 1px #414141;*/
   text-align: center;
+}
+
+.RecRec{
+  font-weight: 500;
+  font-size: 42px;
 }
 
 
