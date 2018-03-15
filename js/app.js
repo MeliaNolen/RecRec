@@ -144,72 +144,94 @@ $(document).on("click", ".submitButton", function () {
     function placesCall(lat, long) {
         if (outdoor === true) {
             console.log("=============================");
+            var outdoorArray = ["park", "zoo", "amusement_park"];
             var service = new google.maps.places.PlacesService($('.replaceMe').get(0));
-
-            service.nearbySearch({
-                location: {
-                    lat: lat,
-                    lng: long
-                },
-                radius: 50000,
-                type: 'park'
-            }, function (place, status) {
-                if (status === google.maps.places.PlacesServiceStatus.OK) {
-                }
-                console.log(place);
-
-                var resultsPark = '';
-                for (i = 0; i < 3; ++i) {
-                    resultsPark += '<div> Name: ' + place[i].name + '</div>';
-                    resultsPark += '<div> Location: ' + place[i].vicinity + '</div>';
-                    resultsPark += '<div> Rating: ' + place[i].rating + '</div>';
-                    //console.log(place[i].place_id);
-                    //console.log(place[i].types);
-                }
-                $('.activity1').append(resultsPark + '<br><br>');
-            })
-            service.nearbySearch({
-                location: {
-                    lat: lat,
-                    lng: long
-                },
-                radius: 50000,
-                type: 'zoo'
-            }, function (place, status) {
-                if (status === google.maps.places.PlacesServiceStatus.OK) {
-                }
-                console.log(place);
-                var resultsZoo = '';
-                for (i = 0; i < 3; ++i) {
-                    resultsZoo += '<div> Name: ' + place[i].name + '</div>';
-                    resultsZoo += '<div> Location: ' + place[i].vicinity + '</div>';
-                    resultsZoo += '<div> Rating: ' + place[i].rating + '</div>';
-                    //console.log(place[i].place_id);
-                    //console.log(place[i].types);
-                }
-                $('.activity2').append(resultsZoo + '<br><br>');
-            })
-            service.nearbySearch({
-                location: {
-                    lat: lat,
-                    lng: long
-                },
-                radius: 50000,
-                type: 'amusement_park'
-            }, function (place, status) {
-                if (status === google.maps.places.PlacesServiceStatus.OK) {
-                }
-                console.log(place);
-                var resultsAmu = '';
-                for (i = 0; i < 3; ++i) {
-                    resultsAmu += '<div> Name: ' + place[i].name + '</div>';
-                    resultsAmu += '<div> Location: ' + place[i].vicinity + '</div>';
-                    resultsAmu += '<div> Rating: ' + place[i].rating + '</div>';
-                    //console.log(place[i].place_id);
-                    //console.log(place[i].types);
-                }
-                $('.activity3').append(resultsAmu + '<br><br>');
-            })
+            var activities = [];
+            
+            for (var i = 0; i < outdoorArray.length; i++) {
+                
+                service.nearbySearch({
+                    location: {
+                        lat: lat,
+                        lng: long
+                    },
+                    radius: 50000,
+                    type: outdoorArray[i]
+                }, function (place, status) {
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    }
+                    console.log(place);
+                        
+                        for (var j = 0; j < 3; ++j) {
+                            var info =('<div> Name: ' + place[j].name + '</div>'+
+                                '<div> Location: ' + place[j].vicinity + '</div>'+
+                                '<div> Rating: ' + place[j].rating + '</div>');
+                            //console.log(place[i].place_id);
+                            //console.log(place[i].types);
+                            
+                           activities.push(info);
+                        }
+                    
+                    $(".activity0").html('<div class="collection"><a href="#!" class="collection-item">'+ activities[0]+'</a>' +
+                        '<a href="#!" class="collection-item">'+activities[1]+'</a>'+
+                        '<a href="#!" class="collection-item">'+activities[2]+'</a>'+
+                        '</div>');
+                    $(".activity1").html('<div class="collection"><a href="#!" class="collection-item">'+ activities[3]+'</a>' +
+                        '<a href="#!" class="collection-item">'+activities[4]+'</a>'+
+                        '<a href="#!" class="collection-item">'+activities[5]+'</a>'+
+                        '</div>');
+                    $(".activity2").html('<div class="collection"><a href="#!" class="collection-item">'+ activities[6]+'</a>' +
+                        '<a href="#!" class="collection-item">'+activities[7]+'</a>'+
+                        '<a href="#!" class="collection-item">'+activities[8]+'</a>'+
+                        '</div>');
+                    
+                })  
+                
+            }
+                    
+            
+            // service.nearbySearch({
+            //     location: {
+            //         lat: lat,
+            //         lng: long
+            //     },
+            //     radius: 50000,
+            //     type: 'zoo'
+            // }, function (place, status) {
+            //     if (status === google.maps.places.PlacesServiceStatus.OK) {
+            //     }
+            //     console.log(place);
+            //     var resultsZoo = '';
+            //     for (i = 0; i < 3; ++i) {
+            //         resultsZoo += '<div> Name: ' + place[i].name + '</div>';
+            //         resultsZoo += '<div> Location: ' + place[i].vicinity + '</div>';
+            //         resultsZoo += '<div> Rating: ' + place[i].rating + '</div>';
+            //         //console.log(place[i].place_id);
+            //         //console.log(place[i].types);
+            //     }
+            //     $('.activity2').append(resultsZoo + '<br><br>');
+            // })
+            // service.nearbySearch({
+            //     location: {
+            //         lat: lat,
+            //         lng: long
+            //     },
+            //     radius: 50000,
+            //     type: 'amusement_park'
+            // }, function (place, status) {
+            //     if (status === google.maps.places.PlacesServiceStatus.OK) {
+            //     }
+            //     console.log(place);
+            //     var resultsAmu = '';
+            //     for (i = 0; i < 3; ++i) {
+            //         resultsAmu += '<div> Name: ' + place[i].name + '</div>';
+            //         resultsAmu += '<div> Location: ' + place[i].vicinity + '</div>';
+            //         resultsAmu += '<div> Rating: ' + place[i].rating + '</div>';
+            //         //console.log(place[i].place_id);
+            //         //console.log(place[i].types);
+            //     }
+            //     $('.activity3').append(resultsAmu + '<br><br>');
+            // })
         }
         else {
             console.log("=============================");
@@ -286,7 +308,14 @@ $(document).on("click", ".submitButton", function () {
 
 });
 
-
+$(document).on("click", ".collection-item", function(){
+    if ($(this).attr("class") === "collection-item") {
+        $(this).attr("class", "collection-item active");
+    }
+    else {
+        $(this).attr("class", "collection-item");
+    }
+})
 
 // Smooth scrolling element
 $(document).on("click", 'a[href*="#"]:not([href="#"])', function () {
