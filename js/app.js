@@ -1,6 +1,6 @@
 //javascript for front-end
 $(document).ready(function () {
-
+$(".modal").modal()
     //Set variable for State Abbreviation drop-down menu
     var stateList = [
         "AK", "AL", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA",
@@ -65,58 +65,79 @@ $(document).on("click", ".submitButton", function () {
     var long;
     var geoAPI;
     var cityInput = $("#city").val().trim();
-    var stateInput = $(".state").val().trim();
+    var stateInput = $(".state").val();
     var outdoor;
 
     console.log(cityInput);
     console.log(stateInput);
 
-
-    geoAPI = "https://maps.googleapis.com/maps/api/geocode/json?address=" + cityInput + ",+" + stateInput + "&key=AIzaSyAadbTVL7TxCXH4u9v8RpRQAJWA0pcfp-8";
-    console.log(geoAPI);
-
-    $.ajax({
-        url: geoAPI,
-        method: "GET",
-        success: function (response) {
-            console.log(response.results[0].formatted_address);
-            console.log(response.results[0].geometry.location.lat);
-            console.log(response.results[0].geometry.location.lng);
-
-            lat = response.results[0].geometry.location.lat;
-            long = response.results[0].geometry.location.lng;
-
-            WeatherCall(lat, long)
-        }
-    });
-
-    function WeatherCall(lat, long) {
-        var APIKey = "166a433c57516f51dfab1f7edaed8413";
-        var queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + long +
-            "&units=imperial&appid=" + APIKey;
+    if (!cityInput || stateInput === null) {
+        console.log("error heard")
+        // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+        $("#modal1").modal("open");
+        return;
+    } else {
+        geoAPI = "https://maps.googleapis.com/maps/api/geocode/json?address=" + cityInput + ",+" + stateInput + "&key=AIzaSyAadbTVL7TxCXH4u9v8RpRQAJWA0pcfp-8";
+        console.log(geoAPI);
 
         $.ajax({
-            url: queryURL,
+            url: geoAPI,
             method: "GET",
             success: function (response) {
-                console.log(response);
+                console.log(typeof response.status)
+                if (response.status === "ZERO_RESULTS") {
+                    console.log("error heard")
+                    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+                    $("#modal2").modal("open");
+                    return;
+                } else {
 
-                var weatherIcon = response.list[0].weather[0].icon;
-                var weatherIconLink = "http://openweathermap.org/img/w/" + weatherIcon + ".png";
-                console.log(weatherIconLink);
+                console.log(response.results[0].formatted_address);
+                console.log(response.results[0].geometry.location.lat);
+                console.log(response.results[0].geometry.location.lng);
 
-                generalCondition = response.list[0].weather[0].main;
+                lat = response.results[0].geometry.location.lat;
+                long = response.results[0].geometry.location.lng;
+
+                WeatherCall(lat, long)
+
+            }
+        }
+    })
+}
+
+
+});
+
+
+function WeatherCall(lat, long) {
+    var APIKey = "166a433c57516f51dfab1f7edaed8413";
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + long +
+        "&units=imperial&appid=" + APIKey;
+
+
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+        success: function (response) {
+            console.log(response);
+
+            var weatherIcon = response.list[0].weather[0].icon;
+            var weatherIconLink = "http://openweathermap.org/img/w/" + weatherIcon + ".png";
+            console.log(weatherIconLink);
+
+            generalCondition = response.list[0].weather[0].main;
                 console.log("Overall conditions = " + generalCondition);
                 $(".generalWeather").append("<div class='gen'><p>" + generalCondition + "</p></div>");
                 //removed <img id='icon' src=" + weatherIconLink + "><br>" +
 
-                cloudCover = response.list[0].clouds.all;
-                console.log("Cloud cover = " + cloudCover + "%");
+            cloudCover = response.list[0].clouds.all;
+            console.log("Cloud cover = " + cloudCover + "%");
 
-                cityName = response.city.name
-                console.log("City name = " + cityName)
+            cityName = response.city.name
+            console.log("City name = " + cityName)
 
-                var rain = response.list[0].rain;
+             var rain = response.list[0].rain;
                 var snow = response.list[0].snow;
                 if (rain && Object.keys(rain).length) {
                     console.log("<div class='prec'>expected rain = " + rain["3h"] + "</div>")
@@ -149,14 +170,16 @@ $(document).on("click", ".submitButton", function () {
                 }
 
 
-                wind = Math.round(response.list[0].wind.speed);
-                console.log("Wind speed is " + wind + " mph");
 
-                maxTemperature = Math.round(response.list[0].main.temp_max);
-                console.log("The high during your outing is predicted to be " + maxTemperature + "°F");
+            wind = Math.round(response.list[0].wind.speed);
+            console.log("Wind speed is " + wind + " mph");
 
 
-                minTemperature = Math.round(response.list[0].main.temp_min);
+            maxTemperature = Math.round(response.list[0].main.temp_max);
+            console.log("The high during your outing is predicted to be " + maxTemperature + "°F");
+
+
+             minTemperature = Math.round(response.list[0].main.temp_min);
                 avgTemperature = Math.round((maxTemperature + minTemperature)/2);
                 console.log("The low during your outing is predicted to be " + minTemperature + "°F");
                 $(".temperature").append("<div class='temp'>" + avgTemperature + "</div>");
@@ -176,11 +199,16 @@ $(document).on("click", ".submitButton", function () {
                 placesCall(lat, long);
             }
 
-            
-        });
+
+    });
 
 
-    };
+
+};
+
+
+
+    
 
 
     function placesCall(lat, long) {
@@ -369,11 +397,13 @@ $(document).on("click", ".submitButton", function () {
                 $('.activity2').append('<a class="collection-item"><h4>Malls</h4></a>'+resultsAmu);
             })
         };
+
     };
+};
 
 
 
-});
+
 
 $(document).on("click", ".collection-item", function(){
     if ($(this).attr("class") === "collection-item") {

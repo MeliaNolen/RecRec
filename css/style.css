@@ -18,17 +18,21 @@
 }
 
 h3 {
+  color:#056571;
+  text-shadow: 1px 1px #414141;
   text-align: center;
 }
 
+
 .inputArea{
-  background-color: rgb(253, 253, 239);
+  background-color: #b2dfdb;
   padding: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .submitButton{
+  background-color: #056571;
   margin-top: 40px;
 }
 
@@ -60,8 +64,8 @@ img{
   font-size: 38px;
 }
 .activitiesContainer{
+  background-color: #b2dfdb;
   display: none;
-  background-color: rgb(242, 251, 255);
   margin: 30px 40px;
   padding: 20px;
 }
@@ -74,4 +78,18 @@ img{
   height: 350px;
 }
 
+
+/* Colors for Radio Buttons */
+.btn {
+  background-color: #056571;
+}
+
+.btn-secondary active{
+  background-color: #1A0315;
+}
+
+.modal{
+  max-height: null;
+  height: 42%;
+}
 
