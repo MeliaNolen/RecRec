@@ -31,6 +31,10 @@ h3 {
   margin-bottom: 20px;
 }
 
+.button-component {
+  display: none;
+}
+
 .submitButton{
   background-color: #056571;
   margin-top: 40px;
