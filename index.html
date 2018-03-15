@@ -25,24 +25,38 @@
 </head>
 <body>
   <!-- This is the blue navbar -->
-  <nav class="light-blue lighten-1" role="navigation">
+   <!-- <nav class="light-blue lighten-1" role="navigation"> -->
+      <nav class="teal darken-3" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">RecRec</a>
   </nav>
 
   <!-- Input area  -->
   <div class="section no-pad-bottom" id="index-banner">
     <div class="container inputArea z-depth-2">
-      <h3 class="header orange-text">Recommending Recreation</h3>
-      <h5>Select your city, day and time.</h5>
-      <h6 class="header light-blue-text">Location</h6>
+      <h3 class="header">Recommending Recreation</h3>
+      <h5 class="header blue-grey-text">Select your city, day and time.</h5>
+      <h6 class="header blue-grey-text">Location</h6>
 
     <form> 
       <!-- City field -->
       <div class="row">
         <div class="input-field col s7">
           <input id="city" type="text" class="validate">
-          <label for="city">City</label>
+          <label for="city" data-error="wrong">City</label>
         </div>
+
+        <!-- error message example
+            <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email" data-error="wrong" data-success="right">Email</label>
+        </div>
+      </div>
+    </form>
+  </div>
+-->
 
         <!-- State field -->
         <select class="browser-default col s1 state">
@@ -52,7 +66,7 @@
         </select>
       </div>
 
-      <h6 class="header light-blue-text">Day</h6>
+      <h6 class="header blue-grey-text">Day</h6>
 
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
           <label class="btn btn-secondary active">
@@ -70,6 +84,7 @@
       </div>
       <br>
       <br>
+      <h6 class="header blue-grey-text">Time</h6>
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
           <label class="btn btn-secondary active">
               <input type="radio" name="options" id="option1" autocomplete="off" checked>Morning
@@ -103,7 +118,8 @@
         <!-- Submit Button -->
       <div class="row center">
           <a href="#one" class="white-text">
-            <button id="download-button" class="btn-large waves-effect waves-light orange submitButton">
+             <!-- <button id="download-button" class="btn-large waves-effect waves-light orange submitButton"> -->
+            <button id="download-button" class="btn-large waves-effect waves-light submitButton">
               SUBMIT
             </button>
           </a>
@@ -138,7 +154,7 @@
   
   <!-- Activities output -->
   <div class="activitiesContainer z-depth-2">
-    <h3 class="header orange-text">Activities</h3>
+    <h3 class="header">Activities</h3>
     <div class="section">
 
       <!--   Icon Section   -->
@@ -177,18 +193,39 @@
     </div>
   </div>
 
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Error!</h4>
+      <p>Please select a City and a State.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Okay</a>
+    </div>
+  </div>
+
+    <!-- Modal Structure -->
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <h4>Error!</h4>
+        <p>Check Your City and State for a valid location.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Okay</a>
+      </div>
+    </div>
 
   <!-- Footer -->
-  <footer class="page-footer orange">
+  <footer class="page-footer teal darken-3">
     <div class="container">
       <div class="row">
         <div class="col l3 s12">
           <h5 class="white-text">Team WeRec</h5>
           <ul>
-            <li><a class="white-text" href="#!">Alex Bradley - Team Leader</a></li>
-            <li><a class="white-text" href="#!">Tim Hayes - Back-end</a></li>
-            <li><a class="white-text" href="#!">Melia Nolen - Front-end</a></li>
-            <li><a class="white-text" href="#!">Ellen Stafford - Front-end</a></li>
+            <li><a class="white-text" href="https://bradleyaw.github.io/">Alex Bradley - Team Leader</a></li>
+            <li><a class="white-text" href="https://timhayes00.github.io/Responsive-Portfolio/">Tim Hayes</a></li>
+            <li><a class="white-text" href="https://melianolen.github.io/Bootstrap-Portfolio/">Melia Nolen</a></li>
+            <li><a class="white-text" href="https://ellenstafford.github.io/Bootstrap-Portfolio/">Ellen Stafford</a></li>
           </ul>
         </div>
       </div>
@@ -196,6 +233,7 @@
     <div class="footer-copyright">
       <div class="container">
       Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      <p>Indoor activity icon (shopping mall) made by Creaticca Creative Agency from the <a class="orange-text text-lighten-3" href="http://thenounproject.com">Noun Project</a>. Outdoor activity icon (park) made by Road Signs, GB from <a class="orange-text text-lighten-3" href="http://thenounproject.com">Noun Project</a>.</p>
       </div>
     </div>
   </footer>
@@ -205,8 +243,8 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script> -->
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="js/app.js"></script>
