@@ -32,9 +32,9 @@
   <div class="section no-pad-bottom" id="index-banner">
 
     <div class="container inputArea z-depth-2 formContainer">
-      <h3 class="header">Recommending Recreation</h3>
+      <h3 class="header RecRec">RECOMMENDING RECREATION</h3>
       <h5 class="header blue-grey-text">Select your city, day and time.</h5>
-      <h6 class="header blue-grey-text">Location</h6>
+      <h6 class="header blue-grey-text">LOCATION</h6>
 
 
     <form> 
@@ -66,7 +66,8 @@
         </select>
       </div>
 
-      <h6 class="header blue-grey-text button-component">Day</h6>
+      <!-- Bootstrap Buttons -->
+      <!-- <h6 class="header blue-grey-text button-component">Day</h6>
 
       <div class="btn-group btn-group-toggle button-component" data-toggle="buttons">
           <label class="btn btn-secondary active">
@@ -97,23 +98,42 @@
           </label>
       </div>
       <br class = " button-component">
-      <br class = " button-component">
+      <br class = " button-component"> -->
 
-      <!-- Date Choices, Today plus 4 
+      <!-- Radio buttons, Date Choices, Today plus 4  -->
+          <h6 class="header blue-grey-text">Day</h6>
+
           <form action="#">  
-                <input name="group1" type="radio" id="today" checked="checked" />
-                <label for="today"><span class="day0"></span></label>
+                <input name="group1" type="radio" id="today" value="0"/>
+                <label for="today"><span class="day0 blue-grey-text"></span></label>
 
-                <input name="group1" type="radio" id="date2" />
-                <label for="date2"><span class="day1"></span></label>
+                <input name="group1" type="radio" id="date2" value="1"/>
+                <label for="date2"><span class="day1 blue-grey-text"></span></label>
             
-                <input name="group1" name="group1" type="radio" id="date3"  />
-                <label for="date3"><span class="day2"></span></label>
+                <input name="group1" name="group1" type="radio" id="date3"  value="2"/>
+                <label for="date3"><span class="day2 blue-grey-text"></span></label>
 
-                <input name="group1" type="radio" id="date4" />
-                <label for="date4"><span class="day3"></span></label>
-              </p>
-          </form> -->
+                <input name="group1" type="radio" id="date4" value="3"/>
+                <label for="date4"><span class="day3 blue-grey-text"></span></label>
+
+                <input name="group1" type="radio" id="date5" value="4"/>
+                <label for="date5"><span class="day4 blue-grey-text"></span></label>
+          </form>
+          <br><br>
+      <!-- Time radio buttons, not assigned to values yet -->
+          <h6 class="header blue-grey-text">Time</h6>
+
+          <form action="#">  
+              <input name="group1" type="radio" id="today" value=""/>
+              <label for="today"><span class=" blue-grey-text">Morning</span></label>
+
+              <input name="group1" type="radio" id="date2" value=""/>
+              <label for="date2"><span class=" blue-grey-text">Afternoon</span></label>
+          
+              <input name="group1" name="group1" type="radio" id="date3"  value=""/>
+              <label for="date3"><span class=" blue-grey-text">Evening</span></label>
+
+          </form>
 
         <!-- Submit Button -->
       <div class="row center">
