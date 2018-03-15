@@ -35,19 +35,14 @@ function initPlaces() {
 }
 
 function showResults() {
+    $(window).scrollTop(0);
     var x = $(".activitiesContainer").show();
     var y = $(".weatherContainer").show();
     var a = $(".newSearchButton").html('<button class="btn-large waves-effect waves-light" type="submit" name="action">New Search</button>');
     var z = $(".formContainer").hide();
 
 }
-function returnToSearch() {
-    var x = $(".activitiesContainer").hide();
-    var y = $(".weatherContainer").hide();
-    var a = $('.newSearchButton').hide();
-    var z = $(".formContainer").show();
 
-}
 
 $(document).on("click", ".newSearchButton", function () {
     document.location.reload();
@@ -59,7 +54,7 @@ $(document).on("click", ".newSearchButton", function () {
 $(document).on("click", ".submitButton", function () {
     event.preventDefault();
 
-    showResults();
+    
 
     var lat;
     var long;
@@ -77,6 +72,7 @@ $(document).on("click", ".submitButton", function () {
         $("#modal1").modal("open");
         return;
     } else {
+        
         geoAPI = "https://maps.googleapis.com/maps/api/geocode/json?address=" + cityInput + ",+" + stateInput + "&key=AIzaSyAadbTVL7TxCXH4u9v8RpRQAJWA0pcfp-8";
         console.log(geoAPI);
 
@@ -91,7 +87,7 @@ $(document).on("click", ".submitButton", function () {
                     $("#modal2").modal("open");
                     return;
                 } else {
-
+                    showResults();
                 console.log(response.results[0].formatted_address);
                 console.log(response.results[0].geometry.location.lat);
                 console.log(response.results[0].geometry.location.lng);
