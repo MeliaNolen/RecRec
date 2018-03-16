@@ -47,11 +47,12 @@ h3 {
 
 .state{
   margin: 15px 0px;
+  color: darkgray;
 }
 
-.state-label {
+/*.state-label {
   color: darkgrey;
-}
+}*/
 
 img{
   margin: auto auto;
