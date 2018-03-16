@@ -2,6 +2,8 @@
 $(document).ready(function () {
 $(".modal").modal()
     //Set variable for State Abbreviation drop-down menu
+    
+
     var stateList = [
         "AK", "AL", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA",
         "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD",
@@ -13,6 +15,7 @@ $(".modal").modal()
     for (i = 0; i < stateList.length; i++) {
         $("select").append("<option value=" + stateList[i] + ">" + stateList[i] + "</option>");
     }
+    $('select').material_select();
 
 
     var day0 = moment().format('dddd, MMMM Do');
