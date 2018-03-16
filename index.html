@@ -105,36 +105,25 @@
       <br class = " button-component"> -->
 
       <!-- Radio buttons, Date Choices, Today plus 4  -->
-          <h6 class="header blue-grey-text">DAY</h6>
-
-          <form action="#">  
-                <input name="group1" type="radio" id="today" value="0" checked/>
-                <label for="today"><span class="day0 blue-grey-text"></span></label>
-
-                <input name="group1" type="radio" id="date2" value="1"/>
-                <label for="date2"><span class="day1 blue-grey-text"></span></label>
-            
-                <input name="group1" name="group1" type="radio" id="date3"  value="2"/>
-                <label for="date3"><span class="day2 blue-grey-text"></span></label>
-
-                <input name="group1" type="radio" id="date4" value="3"/>
-                <label for="date4"><span class="day3 blue-grey-text"></span></label>
-          </form>
-          <br><br>
-      <!-- Time radio buttons, not assigned to values yet -->
-          <h6 class="header blue-grey-text">TIME</h6>
-
-          <form action="#">  
-              <input name="group2" type="radio" id="time1" value="0"/>
-              <label for="time1"><span class=" blue-grey-text">Morning</span></label>
-
-              <input name="group2" type="radio" id="time2" value="1" checked/>
-              <label for="time2"><span class=" blue-grey-text">Afternoon</span></label>
-          
-              <input name="group2" name="group1" type="radio" id="time3"  value="2"/>
-              <label for="time3"><span class=" blue-grey-text">Evening</span></label>
-
-          </form>
+      <div class="toggle-btn-grp">
+          <label onclick="" class="toggle-btn success">
+              <input type="radio" name="group1" id="today" value="0" /><span class="day0"></span></label>
+          <label onclick="" class="toggle-btn">
+              <input type="radio" name="group1" id="day2" value="1"/><span class="day1"></span></label>
+          <label onclick="" class="toggle-btn">
+              <input type="radio" name="group1" id="day3" value="2"/><span class="day2"></span></label>
+          <label onclick="" class="toggle-btn">
+              <input type="radio" name="group1" id="day4" value="3"/><span class="day3"></span></label>
+  
+      </div>
+      <div class="toggle-btn-grp">
+          <label onclick="" class="toggle-btn">
+              <input type="radio" name="group2" id="time1" value="0" />Morning</label>
+          <label onclick="" class="toggle-btn success">
+              <input type="radio" name="group2" id="time2" value="1" />Afternoon</label>
+          <label onclick="" class="toggle-btn">
+              <input type="radio" name="group2" id="time3" value="2" />Evening</label>
+      </div>
 
         <!-- Submit Button -->
       <div class="row center">
