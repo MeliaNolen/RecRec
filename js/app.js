@@ -170,6 +170,7 @@ function WeatherCall(lat, long) {
             wind = Math.round(response.list[0].wind.speed);
             console.log("Wind speed is " + wind + " mph");
 
+            $('.selectedDay').append(cityName);
 
             maxTemperature = Math.round(response.list[0].main.temp_max);
             console.log("The high during your outing is predicted to be " + maxTemperature + "°F");
@@ -429,14 +430,9 @@ $(document).on("click", ".collection-item", function(){
 
 
 // Clearing the weather elements if you want a new search
-$(document).on("click", ".newSearchButton", function () {
-    $(".generalWeather").text("");
-    $(".chanceOfRain").text("");
-    $(".temperature").text("");
-});
-
-// Google Places API 
-
-    //=============================
-    // Alex's code
-    //=============================
+// Not needed anymore
+// $(document).on("click", ".newSearchButton", function () {
+//     $(".generalWeather").text("");
+//     $(".chanceOfRain").text("");
+//     $(".temperature").text("");
+// });
