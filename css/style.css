@@ -122,6 +122,7 @@ label {
   display: inline-block;
   border: solid 1.5px #056571;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .toggle-btn:hover {
